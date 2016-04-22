@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Android开发-layout布局相关属性总结 | 橙子先生的小站 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Wang JianNan">
+    
+    
+
+    <meta name="description" content="Android开发-layout布局相关属性总结
+Android开发中布局的各种属性对于程序员来说还是比较重要的对于常用的都是手到擒来，可有一些不常用的真的是记不住！！为了不每次查询资料，总结了篇算是比较全的博客，希望能有帮助。
+
+安卓内置值1234567891011121314151617181920212223242526android:gravity - 控件布局方式android:layo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android开发-layout布局相关属性总结 | 橙子先生的小站">
+<meta property="og:url" content="http://orangeman.online/2016/04/22/Android开发-layout布局相关属性总结/index.html">
+<meta property="og:site_name" content="橙子先生的小站">
+<meta property="og:description" content="Android开发-layout布局相关属性总结
+Android开发中布局的各种属性对于程序员来说还是比较重要的对于常用的都是手到擒来，可有一些不常用的真的是记不住！！为了不每次查询资料，总结了篇算是比较全的博客，希望能有帮助。
+
+安卓内置值1234567891011121314151617181920212223242526android:gravity - 控件布局方式android:layo">
+<meta property="og:updated_time" content="2016-04-22T07:28:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android开发-layout布局相关属性总结 | 橙子先生的小站">
+<meta name="twitter:description" content="Android开发-layout布局相关属性总结
+Android开发中布局的各种属性对于程序员来说还是比较重要的对于常用的都是手到擒来，可有一些不常用的真的是记不住！！为了不每次查询资料，总结了篇算是比较全的博客，希望能有帮助。
+
+安卓内置值1234567891011121314151617181920212223242526android:gravity - 控件布局方式android:layo">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="http://orangeman.online/css/uno.css" type="text/css">
+    <link rel="stylesheet" href="http://orangeman.online/css/highlight.css" type="text/css">
+    <link rel="stylesheet" href="http://orangeman.online/css/archive.css" type="text/css">
+    <link rel="stylesheet" href="http://orangeman.online/css/china-social-icon.css" type="text/css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">橙子先生的小站</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Android开发-layout布局相关属性总结</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-04-22" class="post-meta__date date">2016-04-22</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="Android_u5F00_u53D1-layout_u5E03_u5C40_u76F8_u5173_u5C5E_u6027_u603B_u7ED3"><a href="#Android_u5F00_u53D1-layout_u5E03_u5C40_u76F8_u5173_u5C5E_u6027_u603B_u7ED3" class="headerlink" title="Android开发-layout布局相关属性总结"></a>Android开发-layout布局相关属性总结</h1><blockquote>
+<p>Android开发中布局的各种属性对于程序员来说还是比较重要的<br>对于常用的都是手到擒来，可有一些不常用的真的是记不住！！<br>为了不每次查询资料，总结了篇算是比较全的博客，希望能有帮助。</p>
+</blockquote>
+<h2 id="u5B89_u5353_u5185_u7F6E_u503C"><a href="#u5B89_u5353_u5185_u7F6E_u503C" class="headerlink" title="安卓内置值"></a>安卓内置值</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">android:gravity </span>- 控件布局方式</span><br><span class="line"><span class="keyword">android:layout_gravity </span>- 布局方式</span><br><span class="line"><span class="keyword">android:persistentDrawingCachehua </span>- 定义绘图的高速缓存的持久性   </span><br><span class="line"><span class="keyword">android:descendantFocusability </span>- 控制子布局焦点获取方式 常用于listView的<span class="keyword">item中包含多个控件 </span>点击无效</span><br><span class="line"><span class="keyword">android:scrollbars </span>- 设置滚动条的状态</span><br><span class="line"><span class="keyword">android:scrollbarStyle </span>- 设置滚动条的样式</span><br><span class="line"><span class="keyword">android:fitsSystemWindows </span>- 设置布局调整时是否考虑系统窗口(如状态栏)</span><br><span class="line"><span class="keyword">android:scrollbarFadeDuration </span>- 设置滚动条淡入淡出时间</span><br><span class="line"><span class="keyword">android:scrollbarDefaultDelayBeforeFade </span>- 设置滚动条N毫秒后开始淡化，以毫秒为单位。</span><br><span class="line"><span class="keyword">android:scrollbarSize </span>- 设置滚动调大小</span><br><span class="line"><span class="keyword">android:fadingEdge </span>- 设置拉滚动条时 ,边框渐变的放向</span><br><span class="line"><span class="keyword">android:drawingCacheQuality </span>- 设置绘图时半透明质量</span><br><span class="line"><span class="keyword">android:OverScrollMode </span>- 滑动到边界时样式</span><br><span class="line"><span class="keyword">android:alpha </span>- 设置透明度</span><br><span class="line"><span class="keyword">android:rotation </span>- 旋转度数</span><br><span class="line"><span class="keyword">android:rotationX </span>- 水平旋转度数</span><br><span class="line"><span class="keyword">android:rotationY </span>- 垂直旋转度数</span><br><span class="line"><span class="keyword">android:scaleX </span>- 设置X轴缩放</span><br><span class="line"><span class="keyword">android:scaleY </span>- 设置Y轴缩放</span><br><span class="line"><span class="keyword">android:verticalScrollbarPosition </span>- 设置垂直滚动条的位置</span><br><span class="line"><span class="keyword">android:layerType </span>- 设定支持</span><br><span class="line"><span class="keyword">android:layoutDirection </span>- 定义布局图纸的方向</span><br><span class="line"><span class="keyword">android:textDirection </span>- 定义文字方向</span><br><span class="line"><span class="keyword">android:textAlignment </span>- 文字对齐方式</span><br><span class="line"><span class="keyword">android:importantForAccessibility </span>- 设置可达性的重要行</span><br><span class="line"><span class="keyword">android:labelFor </span>- 添加标签</span><br></pre></td></tr></table></figure>
+<h2 id="u503C_u4E3Atrue_u6216_u8005false"><a href="#u503C_u4E3Atrue_u6216_u8005false" class="headerlink" title="值为true或者false"></a>值为true或者false</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">android:layout_centerHrizontal </span>- 水平居中</span><br><span class="line"><span class="keyword">android:layout_centerVertical </span>- 垂直居中</span><br><span class="line"><span class="keyword">android:layout_centerInparent </span>- 相对于父元素完全居中</span><br><span class="line"><span class="keyword">android:layout_alignParentBottom </span>- 贴紧父元素的下边缘</span><br><span class="line"><span class="keyword">android:layout_alignParentLeft </span>- 贴紧父元素的左边缘</span><br><span class="line"><span class="keyword">android:layout_alignParentRight </span>- 贴紧父元素的右边缘</span><br><span class="line"><span class="keyword">android:layout_alignParentTop </span>- 贴紧父元素的上边缘</span><br><span class="line"><span class="keyword">android:layout_alignWithParentIfMissing </span>- 如果对应的兄弟元素找不到的话就以父元素做参照物</span><br><span class="line"><span class="keyword">android:layout_alignParentStart </span>- 紧贴父元素结束位置开始</span><br><span class="line"><span class="keyword">android:layout_alignParentEnd </span>- 紧贴父元素结束位置结束</span><br><span class="line"><span class="keyword">android:animateLayoutChanges </span>- 布局改变时是否有动画效果</span><br><span class="line"><span class="keyword">android:clipChildren </span>- 定义子布局是否一定要在限定的区域内</span><br><span class="line"><span class="keyword">android:clipToPadding </span>- 定义布局间是否有间距</span><br><span class="line"><span class="keyword">android:animationCache </span>- 定义子布局也有动画效果</span><br><span class="line"><span class="keyword">android:alwaysDrawnWithCache </span>- 定义子布局是否应用绘图的高速缓存</span><br><span class="line"><span class="keyword">android:addStatesFromChildren </span>- 定义布局是否应用子布局的背景</span><br><span class="line"><span class="keyword">android:splitMotionEvents </span>- 定义布局是否传递touch事件到子布局</span><br><span class="line"><span class="keyword">android:focusableInTouchMode </span>- 定义是否可以通过touch获取到焦点</span><br><span class="line"><span class="keyword">android:isScrollContainer </span>- 定义布局是否作为一个滚动容器 可以调整整个窗体</span><br><span class="line"><span class="keyword">android:fadeScrollbars </span>- 滚动条自动隐藏</span><br><span class="line"><span class="keyword">android:fitsSystemWindows </span>- 设置布局调整时是否考虑系统窗口(如状态栏)</span><br><span class="line"><span class="keyword">android:visibility </span>- 定义布局是否可见</span><br><span class="line"><span class="keyword">android:requiresFadingEdge </span>- 定义滚动时边缘是否褪色</span><br><span class="line"><span class="keyword">android:clickable </span>- 定义是否可点击</span><br><span class="line"><span class="keyword">android:longClickable </span>- 定义是否可长点击</span><br><span class="line"><span class="keyword">android:saveEnabled </span>- 设置是否在窗口冻结时（如旋转屏幕）保存View的数据</span><br><span class="line"><span class="keyword">android:filterTouchesWhenObscured </span>- 所在窗口被其它可见窗口遮住时,是否过滤触摸事件</span><br><span class="line"><span class="keyword">android:keepScreenOn </span>- 设置屏幕常亮</span><br><span class="line"><span class="keyword">android:duplicateParentState </span>- 是否从父容器中获取绘图状态(光标,按下等)</span><br><span class="line"><span class="keyword">android:soundEffectsEnabled </span>- 点击或触摸是否有声音效果</span><br><span class="line"><span class="keyword">android:hapticFeedbackEnabled </span>- 设置触感反馈</span><br></pre></td></tr></table></figure>
+<h2 id="u503C_u4E3A_u201Did/_u2026_u201D"><a href="#u503C_u4E3A_u201Did/_u2026_u201D" class="headerlink" title="值为”id/…”"></a>值为”id/…”</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">android:layout_alignBaseline </span>- 本元素的文本与父元素文本对齐</span><br><span class="line"><span class="keyword">android:layout_below </span>- 在某元素的下方</span><br><span class="line"><span class="keyword">android:layout_above </span>- 在某元素的的上方</span><br><span class="line"><span class="keyword">android:layout_toLeftOf </span>- 在某元素的左边</span><br><span class="line"><span class="keyword">android:layout_toRightOf </span>- 在某元素的右边</span><br><span class="line"><span class="keyword">android:layout_toStartOf </span>- 本元素从某个元素开始</span><br><span class="line"><span class="keyword">android:layout_toEndOf </span>- 本元素在某个元素结束</span><br><span class="line"><span class="keyword">android:layout_alignTop </span>- 本元素的上边缘和某元素的的上边缘对齐</span><br><span class="line"><span class="keyword">android:layout_alignLeft </span>- 本元素的左边缘和某元素的的左边缘对齐</span><br><span class="line"><span class="keyword">android:layout_alignBottom </span>- 本元素的下边缘和某元素的的下边缘对齐</span><br><span class="line"><span class="keyword">android:layout_alignRight </span>- 本元素的右边缘和某元素的的右边缘对齐</span><br><span class="line"><span class="keyword">android:layout_alignStart </span>- 本元素与开始的父元素对齐</span><br><span class="line"><span class="keyword">android:layout_alignEnd </span>- 本元素与结束的父元素对齐</span><br><span class="line"><span class="keyword">android:ignoreGravity </span>- 指定元素不受重力的影响</span><br><span class="line"><span class="keyword">android:layoutAnimation </span>- 定义布局显示时候的动画</span><br><span class="line"><span class="keyword">android:id </span>- 为布局添加ID方便查找</span><br><span class="line"><span class="keyword">android:tag </span>- 为布局添加tag方便查找与类似</span><br><span class="line"><span class="keyword">android:scrollbarThumbHorizontal </span>- 设置水平滚动条的drawable。</span><br><span class="line"><span class="keyword">android:scrollbarThumbVertical </span>- 设置垂直滚动条的drawable</span><br><span class="line"><span class="keyword">android:scrollbarTrackHorizontal </span>- 设置水平滚动条背景（轨迹）的色drawable</span><br><span class="line"><span class="keyword">android:scrollbarTrackVertical </span>- 设置垂直滚动条背景（轨迹）的色drawable</span><br><span class="line"><span class="keyword">android:scrollbarAlwaysDrawHorizontalTrack </span>- 设置水平滚动条是否含有轨道</span><br><span class="line"><span class="keyword">android:scrollbarAlwaysDrawVerticalTrack </span>- 设置垂直滚动条是否含有轨道</span><br><span class="line"><span class="keyword">android:nextFocusLeft </span>- 设置左边指定视图获得下一个焦点</span><br><span class="line"><span class="keyword">android:nextFocusRight </span>- 设置右边指定视图获得下一个焦点</span><br><span class="line"><span class="keyword">android:nextFocusUp </span>- 设置上边指定视图获得下一个焦点</span><br><span class="line"><span class="keyword">android:nextFocusDown </span>- 设置下边指定视图获得下一个焦点</span><br><span class="line"><span class="keyword">android:nextFocusForward </span>- 设置指定视图获得下一个焦点</span><br><span class="line"><span class="keyword">android:contentDescription </span>- 说明</span><br><span class="line"><span class="keyword">android:OnClick </span>- 点击时从上下文中调用指定的方法</span><br></pre></td></tr></table></figure>
+<h2 id="u5177_u4F53_u503C_uFF08_u5982px_u3001dp_u7B49_uFF09"><a href="#u5177_u4F53_u503C_uFF08_u5982px_u3001dp_u7B49_uFF09" class="headerlink" title="具体值（如px、dp等）"></a>具体值（如px、dp等）</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">android:layout_width </span>- 定义本元素的宽度</span><br><span class="line"><span class="keyword">android:layout_height </span>- 定义本元素的高度</span><br><span class="line"><span class="keyword">android:layout_margin </span>- 本元素离上下左右间的距离</span><br><span class="line"><span class="keyword">android:layout_marginBottom </span>- 离某元素底边缘的距离</span><br><span class="line"><span class="keyword">android:layout_marginLeft </span>- 离某元素左边缘的距离</span><br><span class="line"><span class="keyword">android:layout_marginRight </span>- 离某元素右边缘的距离</span><br><span class="line"><span class="keyword">android:layout_marginTop </span>- 离某元素上边缘的距离</span><br><span class="line"><span class="keyword">android:layout_marginStart </span>- 本元素里开始的位置的距离</span><br><span class="line"><span class="keyword">android:layout_marginEnd </span>- 本元素里结束位置的距离</span><br><span class="line"><span class="keyword">android:scrollX </span>- 水平初始滚动偏移</span><br><span class="line"><span class="keyword">android:scrollY </span>- 垂直初始滚动偏移</span><br><span class="line"><span class="keyword">android:background </span>- 本元素的背景</span><br><span class="line"><span class="keyword">android:padding </span>- 指定布局与子布局的间距</span><br><span class="line"><span class="keyword">android:paddingLeft </span>- 指定布局左边与子布局的间距</span><br><span class="line"><span class="keyword">android:paddingTop </span>- 指定布局上边与子布局的间距</span><br><span class="line"><span class="keyword">android:paddingRight </span>- 指定布局右边与子布局的间距</span><br><span class="line"><span class="keyword">android:paddingBottom </span>- 指定布局下边与子布局的间距</span><br><span class="line"><span class="keyword">android:paddingStart </span>- 指定布局左边与子布局的间距与<span class="keyword">android:paddingLeft相同</span><br><span class="line"></span><span class="keyword">android:paddingEnd </span>- 指定布局右边与子布局的间距与<span class="keyword">android:paddingRight相同</span><br><span class="line"></span><span class="keyword">android:fadingEdgeLength </span>- 设置边框渐变的长度</span><br><span class="line"><span class="keyword">android:minHeight </span>- 最小高度</span><br><span class="line"><span class="keyword">android:minWidth </span>- 最小宽度</span><br><span class="line"><span class="keyword">android:translationX </span>- 水平方向的移动距离</span><br><span class="line"><span class="keyword">android:translationY </span>- 垂直方向的移动距离</span><br><span class="line"><span class="keyword">android:transformPivotX </span>- 相对于一点的水平方向偏转量</span><br><span class="line"><span class="keyword">android:transformPivotY </span>- 相对于一点的垂直方向偏转量</span><br></pre></td></tr></table></figure>
+<p>终于写完了，如果存在没有写上去的欢迎通知我!</p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="http://orangeman.online/js/jquery.min.js"></script>
+    <script src="http://orangeman.online/js/main.js"></script>
+    <script src="http://orangeman.online/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="http://orangeman.online/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
