@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Android开发-Asynctask | 橙子先生的小站 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Wang JianNan">
+    
+    
+
+    <meta name="description" content="Android开发-AsyncTask
+现在一直在做安卓的教学，一些人对于一些比较基本的东西还是比较模糊所以最近只要有时间就会总结一些常用的知识希望对读者有所帮助下面有具体示例代码
+
+##简介AsyncTask是 API 3提供的轻量级异步类（代码轻量一些，实际上与Hanler相比更加的消耗资源），效果相当于Thread+Handler。与之相比，AsyncTask在使用上更加简便快捷且过程可控，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android开发-Asynctask | 橙子先生的小站">
+<meta property="og:url" content="http://orangeman.online/2016/04/23/AsyncTask/index.html">
+<meta property="og:site_name" content="橙子先生的小站">
+<meta property="og:description" content="Android开发-AsyncTask
+现在一直在做安卓的教学，一些人对于一些比较基本的东西还是比较模糊所以最近只要有时间就会总结一些常用的知识希望对读者有所帮助下面有具体示例代码
+
+##简介AsyncTask是 API 3提供的轻量级异步类（代码轻量一些，实际上与Hanler相比更加的消耗资源），效果相当于Thread+Handler。与之相比，AsyncTask在使用上更加简便快捷且过程可控，">
+<meta property="og:updated_time" content="2016-04-23T06:21:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android开发-Asynctask | 橙子先生的小站">
+<meta name="twitter:description" content="Android开发-AsyncTask
+现在一直在做安卓的教学，一些人对于一些比较基本的东西还是比较模糊所以最近只要有时间就会总结一些常用的知识希望对读者有所帮助下面有具体示例代码
+
+##简介AsyncTask是 API 3提供的轻量级异步类（代码轻量一些，实际上与Hanler相比更加的消耗资源），效果相当于Thread+Handler。与之相比，AsyncTask在使用上更加简便快捷且过程可控，">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="http://orangeman.online/css/uno.css" type="text/css">
+    <link rel="stylesheet" href="http://orangeman.online/css/highlight.css" type="text/css">
+    <link rel="stylesheet" href="http://orangeman.online/css/archive.css" type="text/css">
+    <link rel="stylesheet" href="http://orangeman.online/css/china-social-icon.css" type="text/css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">橙子先生的小站</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Android开发-Asynctask</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-04-23" class="post-meta__date date">2016-04-23</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="Android_u5F00_u53D1-AsyncTask"><a href="#Android_u5F00_u53D1-AsyncTask" class="headerlink" title="Android开发-AsyncTask"></a>Android开发-AsyncTask</h1><blockquote>
+<p>现在一直在做安卓的教学，一些人对于一些比较基本的东西还是比较模糊<br>所以最近只要有时间就会总结一些常用的知识<br>希望对读者有所帮助<br>下面有具体示例代码</p>
+</blockquote>
+<p>##简介<br>AsyncTask是 API 3提供的轻量级异步类（代码轻量一些，实际上与Hanler相比更加的消耗资源），效果相当于Thread+Handler。与之相比，AsyncTask在使用上更加简便快捷且过程可控，但当多个异步操作进行UI变更的时候，就变得比较复杂。</p>
+<p>首先明确为什么会有AsyncTask或者handler的存在，其实很简单，就是程序在正常情况下只存在一个线程（主线程也叫UI线程），而当处理耗时操作如网络请求等等，就会阻塞主线程，造成UI界面的卡顿，这是不被允许的。所以才会出现异步处理（AsyncTask、Thread）。</p>
+<p>这也就是为什么我们会使用AsyncTask或者Thread的原因。</p>
+<p>AsyncTask是一个抽象类，如需使用它则必须显示的继承或者使用匿名内部类。</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AsyncTask</span><span class="inheritance">&lt;<span class="parent">Params</span></span>, <span class="title">Progress</span>, <span class="title">Result</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其中实现子类或者匿名内部类的时候需要设置三个泛型参数<br>Params：执行后台任务所需要设置的参数，如：网络请求的URL<br>Progress：后台任务执行的进度信息，如：实现下载网络图片的进度，就需要通过它<br>Result：后台任务执行完毕最终返回的结果，如：下载网络图片最终返回的图片</p>
+<p>AsyncTask提供的方法</p>
+<p>该方法运行在UI线程，当AsyncTask执行execute()方法，onPreExecute()就会被执行。<br>可以再这个方法中做一些准备工作，如初始化进度条值等等<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onPreExecute</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onPreExecute();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>在onPreExecute()方法执行后马上执行，该方法运行在子线程中，负责执行耗时操作。<br>在执行耗时操作的过程中你可以不断地调用publishProgress()方法，这样可以使onProgressUpdate()不断地被调用<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> Result doInBackground(<span class="keyword">Params</span><span class="attribute">...</span> <span class="keyword">params</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>调用publishProgress()方法后，就会导致该方法被执行，方法运行在UI线程，<br>可以更新进度条的显示等等关于进度的信息<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onProgressUpdate</span><span class="params">(Progress... values)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onProgressUpdate(values);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这是最终的方法<br>doInBackground()方法执行后的返回结果会传给该方法，该方法运行在UI线程，在该方法中你可以显示处理结果。<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onPostExecute</span><span class="params">(Result s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onPostExecute(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>用户取消操作执行的方法<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onCancelled</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">super</span>.onCancelled();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个方法不可以复写，多数在doInBackground()中调用，用来及时发布后台任务<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">publishProgress</span><span class="params">(Integer... Values)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>下面是我写的一个下载图片的例子</p>
+<p>MainActivity</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">AppCompatActivity</span> &#123;</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">ImageView</span> imageView;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">ProgressBar</span> progressBar;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> imageUrl = <span class="string">"http://img4.duitang.com/uploads/item/201502/01/20150201163209_NNruz.jpeg"</span>;</span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> void onCreate(<span class="type">Bundle</span> savedInstanceState) &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(<span class="type">R</span>.layout.activity_main);</span><br><span class="line">        imageView = (<span class="type">ImageView</span>) findViewById(<span class="type">R</span>.id.main_imageview);</span><br><span class="line">        progressBar = (<span class="type">ProgressBar</span>) findViewById(<span class="type">R</span>.id.main_progress);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 通过按钮点击事件开启Asynctask任务</span></span><br><span class="line">    public void buttonAction(<span class="type">View</span> view) &#123;</span><br><span class="line">        <span class="keyword">new</span>  <span class="type">MyAsyncTask</span>().execute(imageUrl);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用匿名内部类的方式使用AsyncTask</span></span><br><span class="line">    <span class="comment">// 三个泛型分别为1.传入的网址类型 2.不需要监听进度所以使用Void 3.返回的值类型</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">MyAsyncTask</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">AsyncTask&lt;String</span>, <span class="title">Void</span>, <span class="title">Bitmap&gt;</span> &#123;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="keyword">protected</span> void onPreExecute() &#123;</span><br><span class="line">            <span class="keyword">super</span>.onPreExecute();</span><br><span class="line">            <span class="comment">// 使progressBar可见</span></span><br><span class="line">            progressBar.setVisibility(<span class="type">View</span>.<span class="type">VISIBLE</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="keyword">protected</span> <span class="type">Bitmap</span> doInBackground(<span class="type">String</span>... params) &#123;</span><br><span class="line">            <span class="comment">// 网络请求图片</span></span><br><span class="line">            <span class="type">String</span> imageUrl = params[<span class="number">0</span>];</span><br><span class="line">            <span class="type">Bitmap</span> bitmap = <span class="literal">null</span>;</span><br><span class="line">            <span class="type">InputStream</span> inputStream = <span class="literal">null</span>;</span><br><span class="line">            <span class="type">HttpURLConnection</span> connection = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="type">URL</span> url = <span class="keyword">new</span> <span class="type">URL</span>(imageUrl);</span><br><span class="line">                connection = (<span class="type">HttpURLConnection</span>) url.openConnection();</span><br><span class="line">                <span class="keyword">if</span> (connection.getResponseCode() == <span class="type">HttpURLConnection</span>.<span class="type">HTTP_OK</span>) &#123;</span><br><span class="line">                    inputStream = connection.getInputStream();</span><br><span class="line">                    bitmap = <span class="type">BitmapFactory</span>.decodeStream(inputStream);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (<span class="type">MalformedURLException</span> e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (<span class="type">IOException</span> e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (inputStream != <span class="literal">null</span>)</span><br><span class="line">                    inputStream.close();</span><br><span class="line">                    connection.disconnect();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (<span class="type">IOException</span> e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> bitmap;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="keyword">protected</span> void onPostExecute(<span class="type">Bitmap</span> bitmap) &#123;</span><br><span class="line">            <span class="keyword">super</span>.onPostExecute(bitmap);</span><br><span class="line">            <span class="keyword">if</span> (bitmap != <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="comment">// 成功之后返回的数据</span></span><br><span class="line">                imageView.setImageBitmap(bitmap);</span><br><span class="line">                progressBar.setVisibility(<span class="type">View</span>.<span class="type">GONE</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>activity_main.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">RelativeLayout</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attribute">xmlns:tools</span>=<span class="value">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:layout_height</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:paddingBottom</span>=<span class="value">"@dimen/activity_vertical_margin"</span></span><br><span class="line">    <span class="attribute">android:paddingLeft</span>=<span class="value">"@dimen/activity_horizontal_margin"</span></span><br><span class="line">    <span class="attribute">android:paddingRight</span>=<span class="value">"@dimen/activity_horizontal_margin"</span></span><br><span class="line">    <span class="attribute">android:paddingTop</span>=<span class="value">"@dimen/activity_vertical_margin"</span></span><br><span class="line">    <span class="attribute">tools:context</span>=<span class="value">"com.example.wjn.asynctaskdemo.MainActivity"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">ImageView</span></span><br><span class="line">        <span class="attribute">android:id</span>=<span class="value">"@+id/main_imageview"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">ProgressBar</span></span><br><span class="line">        <span class="attribute">android:id</span>=<span class="value">"@+id/main_progress"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_below</span>=<span class="value">"@id/main_imageview"</span></span><br><span class="line">        <span class="attribute">android:visibility</span>=<span class="value">"gone"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">Button</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_below</span>=<span class="value">"@id/main_progress"</span></span><br><span class="line">        <span class="attribute">android:onClick</span>=<span class="value">"buttonAction"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"缓存图片"</span></span><br><span class="line">        /&gt;</span></span><br><span class="line">        </span><br><span class="line"><span class="tag">&lt;/<span class="title">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这样就完成了一个简单的AsyncTask的使用。能懂就好。</p>
+<p>下面介绍下AsyncTask常见的问题：</p>
+<p>最多可执行数量<br>在API11之前的版本，内部的线程池只能执行5个线程。超过的只能等待。也就是说AsyncTask的实例超过5个的话，那么之后的线程只能等待前五个执行完成之后才能执行。这就产生了一个比较大的限制。所以出现这种情况之后，只能自己创建线程池管理Thread。<br>但在之后Google意识到了AsyncTask的局限性，从Android 3.0开始对AsyncTask的API做出了一些调整：使用execute()提交的任务，增加了二个预定义的线程池SERIAL_EXECUTOR(默认为序列线程池，即一次只执行一个线程任务)和THREAD_POOL_EXECUTOR(API11之前使用的线程池)<br>他们两个最大的区别就是SERIAL_EXECUTOR为执行完一个在执行下一个，而THREAD_POOL_EXECUTOR和以前没有任何区别，一次崔铎执行5个，5个之后的只能等待。</p>
+<p>所以有的时候会遇到网络图片需要等待很久才能出现，这就是因为有其他的AsyncTask还没有执行完毕。所以遇到这种问题解决很简单，要么直接使用Thread要么创建一个单独的线程池(Executors.newCachedThreadPool())</p>
+<p>生命周期<br>其实对于AsyncTask很多人有这样一个误解，就是一个在Activity中的AsyncTask会随着Activity的销毁而销毁。然而事实并非如此。AsyncTask会一直执行doInBackground()方法直到方法执行结束</p>
+<p>如果cancel(boolean)调用了，则执行onCancelled(Result)方法<br>如果cancel(boolean)没有调用，则执行onPostExecute(Result)方法</p>
+<p>内存问题</p>
+<p>在Activity中使用非静态匿名内部AsyncTask类，由于Java内部类的特点，AsyncTask内部类会持有外部类的隐式引用。但由于AsyncTask的生命周期可能比Activity的长，当Activity进行销毁AsyncTask还在执行时，所以AsyncTask还会持有Activity的引用，这样就会导致Activity对象无法回收，进而产生内存泄露。</p>
+<p>有可能出现结果丢失</p>
+<p>在屏幕旋转等造成Activity重新创建时AsyncTask数据丢失的问题。当Activity销毁并创新创建后，还在运行的AsyncTask会持有一个Activity的非法引用即之前的Activity实例。这样就导致了onPostExecute()没有任何作用。</p>
+<p>最后给一些自己的建议</p>
+<p>1.少用异步 - 原因很简单，异步任务开销大，难维护等等<br>2.出现异步的情况可以使用 - Loaders<br>3.大量线程执行任务的时候一定要使用线程池<br>4.对于没有与UI交互的线程就用Thread吧</p>
+<p>希望有所帮助，感谢阅读！</p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="http://orangeman.online/js/jquery.min.js"></script>
+    <script src="http://orangeman.online/js/main.js"></script>
+    <script src="http://orangeman.online/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="http://orangeman.online/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
