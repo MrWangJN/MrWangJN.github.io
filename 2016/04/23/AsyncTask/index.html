@@ -19,7 +19,7 @@
     <meta name="description" content="Android开发-AsyncTask
 现在一直在做安卓的教学，一些人对于一些比较基本的东西还是比较模糊所以最近只要有时间就会总结一些常用的知识希望对读者有所帮助下面有具体示例代码
 
-##简介AsyncTask是 API 3提供的轻量级异步类（代码轻量一些，实际上与Hanler相比更加的消耗资源），效果相当于Thread+Handler。与之相比，AsyncTask在使用上更加简便快捷且过程可控，">
+简介AsyncTask是 API 3提供的轻量级异步类（代码轻量一些，实际上与Hanler相比更加的消耗资源），效果相当于Thread+Handler。与之相比，AsyncTask在使用上更加简便快捷且过程可控，但当">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android开发-Asynctask | 橙子先生的小站">
 <meta property="og:url" content="http://orangeman.online/2016/04/23/AsyncTask/index.html">
@@ -27,14 +27,14 @@
 <meta property="og:description" content="Android开发-AsyncTask
 现在一直在做安卓的教学，一些人对于一些比较基本的东西还是比较模糊所以最近只要有时间就会总结一些常用的知识希望对读者有所帮助下面有具体示例代码
 
-##简介AsyncTask是 API 3提供的轻量级异步类（代码轻量一些，实际上与Hanler相比更加的消耗资源），效果相当于Thread+Handler。与之相比，AsyncTask在使用上更加简便快捷且过程可控，">
-<meta property="og:updated_time" content="2016-04-23T06:21:22.000Z">
+简介AsyncTask是 API 3提供的轻量级异步类（代码轻量一些，实际上与Hanler相比更加的消耗资源），效果相当于Thread+Handler。与之相比，AsyncTask在使用上更加简便快捷且过程可控，但当">
+<meta property="og:updated_time" content="2016-04-23T06:25:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android开发-Asynctask | 橙子先生的小站">
 <meta name="twitter:description" content="Android开发-AsyncTask
 现在一直在做安卓的教学，一些人对于一些比较基本的东西还是比较模糊所以最近只要有时间就会总结一些常用的知识希望对读者有所帮助下面有具体示例代码
 
-##简介AsyncTask是 API 3提供的轻量级异步类（代码轻量一些，实际上与Hanler相比更加的消耗资源），效果相当于Thread+Handler。与之相比，AsyncTask在使用上更加简便快捷且过程可控，">
+简介AsyncTask是 API 3提供的轻量级异步类（代码轻量一些，实际上与Hanler相比更加的消耗资源），效果相当于Thread+Handler。与之相比，AsyncTask在使用上更加简便快捷且过程可控，但当">
     
     
     
@@ -70,6 +70,11 @@
         <hr class="panel-cover__divider" />
 
         
+        <p class="panel-cover__description">
+          每一个不曾起舞的日子都是对生命的辜负
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
 
         <div class="navigation-wrapper">
 
@@ -78,13 +83,7 @@
 
               
                 
-                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
-              
-                
-                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
-              
-                
-                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
               
 
             </ul>
@@ -182,7 +181,7 @@ classes that you can use:
     <h1 id="Android_u5F00_u53D1-AsyncTask"><a href="#Android_u5F00_u53D1-AsyncTask" class="headerlink" title="Android开发-AsyncTask"></a>Android开发-AsyncTask</h1><blockquote>
 <p>现在一直在做安卓的教学，一些人对于一些比较基本的东西还是比较模糊<br>所以最近只要有时间就会总结一些常用的知识<br>希望对读者有所帮助<br>下面有具体示例代码</p>
 </blockquote>
-<p>##简介<br>AsyncTask是 API 3提供的轻量级异步类（代码轻量一些，实际上与Hanler相比更加的消耗资源），效果相当于Thread+Handler。与之相比，AsyncTask在使用上更加简便快捷且过程可控，但当多个异步操作进行UI变更的时候，就变得比较复杂。</p>
+<h2 id="u7B80_u4ECB"><a href="#u7B80_u4ECB" class="headerlink" title="简介"></a>简介</h2><p>AsyncTask是 API 3提供的轻量级异步类（代码轻量一些，实际上与Hanler相比更加的消耗资源），效果相当于Thread+Handler。与之相比，AsyncTask在使用上更加简便快捷且过程可控，但当多个异步操作进行UI变更的时候，就变得比较复杂。</p>
 <p>首先明确为什么会有AsyncTask或者handler的存在，其实很简单，就是程序在正常情况下只存在一个线程（主线程也叫UI线程），而当处理耗时操作如网络请求等等，就会阻塞主线程，造成UI界面的卡顿，这是不被允许的。所以才会出现异步处理（AsyncTask、Thread）。</p>
 <p>这也就是为什么我们会使用AsyncTask或者Thread的原因。</p>
 <p>AsyncTask是一个抽象类，如需使用它则必须显示的继承或者使用匿名内部类。</p>
