@@ -26,3 +26,9 @@ $(document).ready(function() {
   });
 
 });
+
+function changeFooter() {
+	var footer = document.getElementsByTagName('footer');
+	alert(footer);
+}
+changeFooter();
